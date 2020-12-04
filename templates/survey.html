@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+    {% block title %} Survey {% endblock %}
+
+
+    {% block content %}
+    <h1>Questions</h1>
+
+    <h3> {{surveys[index].question}}</h3>
+
+        <form action="/awncers/{{index}}" method="POST">
+        {% for awncer in surveys[index].choices %}
+            
+                <label   href="{{index}} for="awncer">{{awncer}}</label>
+                <input id="awncer"  type="radio" name="awncer" value="{{awncer}}">
+            
+        {% endfor %}
+            <input type="submit" href="{{index + 1}}" name="index">
+        </form>
+        
+        
+    {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- {% for surve in surveys %}
+        <li>{{surve.question}}</li>
+        <li>{{surve.choices[0] }}</li>
+       {% endfor %}      -->
